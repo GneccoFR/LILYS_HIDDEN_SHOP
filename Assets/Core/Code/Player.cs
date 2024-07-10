@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -7,7 +8,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] GameManager _gameManager;
+    [SerializeField] private GameManager _gameManager;
+    [SerializeField] private InteractionController _interactionController;
     [SerializeField] private int _money = 21000;
     [SerializeField] private float _movementSpeed = 3.666f;
     [SerializeField] private Rigidbody2D _rigidBody2D;
@@ -17,12 +19,11 @@ public class Player : MonoBehaviour
     [SerializeField] private SpriteRenderer _hat;
     [SerializeField] private SpriteRenderer _mask;
     [SerializeField] private SpriteRenderer _outfit;
-    
+
     [Header("Avatar objects references")]
     [SerializeField] private Image _avatarHat;
     [SerializeField] private Image _avatarMask;
     [SerializeField] private Image _avatarOutfit;
-
 
     private void Update()
     {
@@ -54,22 +55,24 @@ public class Player : MonoBehaviour
 
     public void OnCollision(string tag)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        switch (tag)
         {
-            switch (tag)
-            {
-                case "Shopkeeper":
-                    _gameManager.TryInteraction(Interactions.Shopkeeper);
-                    break;
-                
-                case "ItemForSale":
-                    _gameManager.TryInteraction(Interactions.ItemForSale);
-                    break;
-                
-                case "ExitDoor":
-                    _gameManager.TryInteraction(Interactions.ExitDoor);
-                    break;
-            }
+            case "Shopkeeper":
+                _interactionController.LoadInteraction(Interactions.Shopkeeper);
+                break;
+
+            case "ItemForSale":
+                _interactionController.LoadInteraction(Interactions.ItemForSale);
+                break;
+
+            case "ExitDoor":
+                _interactionController.LoadInteraction(Interactions.ExitDoor);
+                break;
         }
+    }
+
+    internal void OnCollisionLeave()
+    {
+        _interactionController.UnLoadInteraction();
     }
 }
