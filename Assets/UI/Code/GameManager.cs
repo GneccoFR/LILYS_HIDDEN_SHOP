@@ -14,9 +14,12 @@ public enum Interactions
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject _titleScreen;
-    [SerializeField] private TypewriterFX _shopkeeperTextBubble;
-    [SerializeField] private BlackBlurFX _blackBlurFX;
     [SerializeField] private GameObject _shoppingInterface;
+    [SerializeField] private GameObject _inventoryScreen;
+    [SerializeField] private TypewriterFX _shopkeeperTextBubble;
+    [SerializeField] private TextBubbleView _playerTextBubble;
+    [SerializeField] private BlackBlurFX _blackBlurFX;
+    private List<string> _messages = new List<string>() ;
 
     #region GAME_START
 
@@ -51,6 +54,9 @@ public class GameManager : MonoBehaviour
                 break;
 
             case Interactions.ItemForSale:
+                
+                _messages.Add(StringConstants._itemForSaleInteraction);
+                _playerTextBubble.LoadMessages(_messages);
                 break;
 
             case Interactions.ExitDoor:
@@ -69,6 +75,14 @@ public class GameManager : MonoBehaviour
     public void CloseShop()
     {
         _shoppingInterface.gameObject.SetActive(false);
+    }
+
+    public void OpenInventory()
+    {
+        if (_inventoryScreen.gameObject.activeInHierarchy == false)
+            _inventoryScreen.SetActive(true);
+        else
+            _inventoryScreen.SetActive(false);
     }
 
     #endregion PUBLIC_METHODS

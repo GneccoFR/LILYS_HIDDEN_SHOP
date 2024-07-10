@@ -10,4 +10,5 @@ public struct StringConstants
     public const string _shopkeeperInteract = "Press Space to buy Something...";
     public const string _exitDoorInteract = "Press Space to Exit";
     public const string _itemForSaleInteract = "Interact (Space)";
+    public const string _itemForSaleInteraction = "One of the Shopkeeper's goods for sale. Better not meddle with this without paying for it...";
 }
