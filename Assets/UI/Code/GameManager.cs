@@ -46,7 +46,6 @@ public class GameManager : MonoBehaviour
 
     public void TryInteraction(Interactions interaction)
     {
-        Debug.Log("Trying to interact!");
         switch (interaction)
         {
             case Interactions.Shopkeeper:
@@ -55,7 +54,7 @@ public class GameManager : MonoBehaviour
 
             case Interactions.ItemForSale:
                 
-                _messages.Add(StringConstants._itemForSaleInteraction);
+                _messages.Add(StringConstants.ItemForSaleInteraction);
                 _playerTextBubble.LoadMessages(_messages);
                 break;
 

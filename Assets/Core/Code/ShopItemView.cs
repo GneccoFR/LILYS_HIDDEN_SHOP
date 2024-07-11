@@ -11,6 +11,11 @@ public class ShopItemView : MonoBehaviour
         _spriteRenderer.gameObject.SetActive(false);
     }
 
+    public void ItemBuyed()
+    {
+        _spriteRenderer.gameObject.SetActive(true);
+    }
+
     public void loadItem(Sprite sprite)
     {
         _spriteRenderer.gameObject.SetActive(true);

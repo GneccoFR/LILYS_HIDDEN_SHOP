@@ -7,6 +7,13 @@ public class TitleView : MonoBehaviour
 {
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private Button _button;
+    [SerializeField] private RectTransform _helperRect;
+
+
+    private void OnDisable()
+    {
+        _helperRect.gameObject.SetActive(true);
+    }
 
     private void Start()
     {

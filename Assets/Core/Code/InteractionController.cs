@@ -31,15 +31,15 @@ public class InteractionController : MonoBehaviour
         switch (interaction)
         {
             case Interactions.Shopkeeper:
-                _messageView.SetText(StringConstants._shopkeeperInteract);
+                _messageView.SetText(StringConstants.ShopkeeperInteract);
                 break;
 
             case Interactions.ItemForSale:
-                _messageView.SetText(StringConstants._itemForSaleInteract);
+                _messageView.SetText(StringConstants.ItemForSaleInteract);
                 break;
 
             case Interactions.ExitDoor:
-                _messageView.SetText(StringConstants._exitDoorInteract);
+                _messageView.SetText(StringConstants.ExitDoorInteract);
                 break;
         }
     }
