@@ -725,7 +725,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lyli's Hidden Shop
+  m_text: Lily's Hidden Shop
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 72f6b47fbcda87b4fa37b76266baabb8, type: 2}
   m_sharedMaterial: {fileID: -4374621167693088754, guid: 72f6b47fbcda87b4fa37b76266baabb8, type: 2}
@@ -2761,7 +2761,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &423314153
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6066,6 +6066,7 @@ MonoBehaviour:
   - {fileID: 2115772433}
   - {fileID: 1719400821}
   - {fileID: 2059441895}
+  _inventoryMoneyCount: {fileID: 1836334231}
   _player: {fileID: 1076249090}
   PlayerMoney: 21000
 --- !u!1 &973120529
@@ -6197,7 +6198,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1010596095
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6234,6 +6235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameManager: {fileID: 1130838278}
   _button: {fileID: 956296780}
+  _helperRect: {fileID: 423314153}
 --- !u!1 &1030058791
 GameObject:
   m_ObjectHideFlags: 0
@@ -6543,6 +6545,8 @@ MonoBehaviour:
   _interactionController: {fileID: 1734634660}
   _movementSpeed: 3.6
   _rigidBody2D: {fileID: 1189300356}
+  _wornItem: 
+  _defaultHat: {fileID: 21300000, guid: 04f6c40e52535b941b42e11550f9cb8c, type: 3}
   _hat: {fileID: 5201368}
   _mask: {fileID: 1687723657}
   _outfit: {fileID: 1135839820}
@@ -10120,6 +10124,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1edbaac1016490c4899795282f815a6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1836334231 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8042828485630533670, guid: 112fa4877d6ae39449fb144112b4a3cd, type: 3}
+  m_PrefabInstance: {fileID: 887294685}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1836684102
